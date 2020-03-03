@@ -1,21 +1,5 @@
 # PlugExample
 
-**TODO: Add description**
+I am trying to figure out why raised `Plug` errors behave differently than other errors which are raised.  
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `plug_example` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:plug_example, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/plug_example](https://hexdocs.pm/plug_example).
-
+In the [router.ex](lib/plug_example/router.ex) file, if the `Plug` error is raised, nothing is logged.  If the regular error is raised, the stacktrace is logged. 
