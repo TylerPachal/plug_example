@@ -4,7 +4,7 @@ I am trying to figure out why raised `Plug` errors behave differently than other
 
 In the [router.ex](lib/plug_example/router.ex) file, I have two different endpoints.
 
-The first raises a regular error, which results in some error logging:
+The first raises a regular error, which results in some error logging, and a 500 is returned to the client:
 
 ```
 curl localhost:4000/regular_error
@@ -28,7 +28,7 @@ Request: GET /regular_error
         (stdlib) proc_lib.erl:249: :proc_lib.init_p_do_apply/3
 ```
 
-The second endpoint raises a `Plug` error and results in no logging:
+The second endpoint raises a `Plug` error and results in no logging, with a 500 being returned to the client:
 
 ```
 curl localhost:4000/plug_error
@@ -38,3 +38,5 @@ curl localhost:4000/plug_error
 8:54:57.482 [info]  GET /plug_error
 
 ```
+
+I beleive the second case is a bug, and a 415 should be returned.
