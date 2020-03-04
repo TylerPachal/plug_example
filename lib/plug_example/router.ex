@@ -15,8 +15,8 @@ defmodule Router do
   end
 
   get "/plug_error" do
-    # Nothing is logged and a 500 response is sent to the client.  Why is
-    # nothing logged?
+    # Nothing is logged and a 500 response is sent to the client.  Why is a 415
+    # not returned?
     raise Plug.Parsers.BadEncodingError, message: "Bad encoding!"
 
     # Not going to get here
